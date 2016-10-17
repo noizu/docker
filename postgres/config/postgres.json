@@ -1,0 +1,15 @@
+{
+  "disable_update_check": true,
+
+
+  "service":
+  {
+    "name": "postgres",
+    "tags": ["postgres", "database"],
+    "port": 5432,
+    "check": {
+      "script": "psql --user postgres --quiet -c \"select now()\"",
+      "interval": "10s"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "rabbitmq-tls",
+    "tags": ["rabbitmq", "tls", "queue"],
+    "port": 5671
+  }
+}

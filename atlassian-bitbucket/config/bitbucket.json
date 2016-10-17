@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "bitbucket",
+    "tags": ["bitbucket", "atlassian"],
+    "port": 7990
+  }
+}

@@ -1,0 +1,13 @@
+    #Disabled    error_page 403 = /403.html;
+    #Disabled    error_page 404 = /404.html;
+    #Disabled    error_page 503 = /503.html;
+
+    location  /403.html {
+        internal;
+    }
+    location  /404.html {
+        internal;
+    }
+    location  /503.html {
+        internal;
+    }

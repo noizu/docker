@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "confluence",
+    "tags": ["confluence", "atlassian"],
+    "port": 8090
+  }
+}

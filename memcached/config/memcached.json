@@ -1,0 +1,11 @@
+{
+  "disable_update_check": true,
+
+
+  "service":
+  {
+    "name": "memcached",
+    "tags": ["memcached", "memcache"],
+    "port": 11211
+  }
+}

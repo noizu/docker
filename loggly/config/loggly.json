@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "loggly",
+    "tags": ["loggly", "rsyslogd", "rsyslog"],
+    "port": 514    
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "crowd",
+    "tags": ["crowd", "atlassian"],
+    "port": 8095
+  }
+}

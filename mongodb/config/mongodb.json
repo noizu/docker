@@ -1,0 +1,14 @@
+{
+  "disable_update_check": true,
+
+  "service":
+  {
+    "name": "mongodb",
+    "tags": ["mongo", "mongodb", "nosql", "database"],
+    "port": 27017,
+    "check": {
+      "script": "mongo --eval \"true;\"",
+      "interval": "10s"
+    }
+  }
+}

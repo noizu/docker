@@ -1,0 +1,28 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+# Daily
+30 22 * * * nginx php /src/application/crons/run.daily.php >> /var/log/cron.24h.log 2>&1
+
+
+# Hourly
+1 * * * * nginx php /src/application/crons/run.hourly.php >> /var/log/cron.60m.log 2>&1
+
+# Five Minutes
+*/5 * * * * nginx php /src/application/crons/run.five-minutes.php >> /var/log/cron.5m.log 2>&1
+
+# Every Minute
+*/1 * * * * nginx php /src/application/crons/run.every-minute.php >> /var/log/cron.1m.log 2>&1
+

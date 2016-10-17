@@ -1,0 +1,13 @@
+       index index.php index.html;
+
+        #limit_req zone=web burst=1024 nodelay;
+
+        if ( -f $request_filename) {
+            expires max;
+            break;
+        }
+
+        if ( !-f $request_filename) {
+             rewrite ^/$ /index.php last;
+             rewrite ^.*$ /zf-index.php last;
+        }

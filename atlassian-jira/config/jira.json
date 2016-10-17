@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "jira",
+    "tags": ["jira", "atlassian"],
+    "port": 8080
+  }
+}

@@ -1,0 +1,13 @@
+    location ~* \.php$ {
+
+         #limit_req zone=web burst=480 nodelay;
+         fastcgi_split_path_info ^(.+\.php)(/.+)$;
+         include         fastcgi_params;
+         fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+         fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+         fastcgi_param   APPLICATION_ENV    $application_env;
+         fastcgi_param   X_NOIZU_FLAVOR     $flavor;
+         fastcgi_param   X_NOIZU_NOCACHE    $nocache;
+         fastcgi_param   APP_ENV             "sandbox";
+         fastcgi_pass unix:/tmp/php-fpm-socket;
+    }

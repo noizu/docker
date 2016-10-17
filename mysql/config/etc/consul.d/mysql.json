@@ -1,0 +1,15 @@
+{
+  "disable_update_check": true,
+
+
+  "service":
+  {
+    "name": "mysql",
+    "tags": ["percona", "mysql", "database"],
+    "port": 3306,
+    "check": {
+      "script": "mysql --user test --password=test -e \"select now()\"",
+      "interval": "10s"
+    }
+  }
+}

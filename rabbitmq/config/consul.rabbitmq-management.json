@@ -1,0 +1,9 @@
+{
+  "disable_update_check": true,
+  "service":
+  {
+    "name": "rabbitmq-management",
+    "tags": ["rabbitmq", "admin", "queue"],
+    "port": 15672
+  }
+}

@@ -1,0 +1,53 @@
+  #Calculated Vars
+    set $nocache "false";
+    if ($host ~* nocache ) {
+        set $nocache "true";
+    }
+    set $sandbox_dir $sandbox;
+
+    ################################################
+    # Recover IP address from Load Balancer        #
+    ################################################
+    real_ip_header X-Forwarded-For;
+    set_real_ip_from 0.0.0.0/0;
+
+    ################################################
+    # Block Blacklisted Accounts                   #
+    ################################################
+    include       /usr/share/senginx/conf/conf.d/config-bits/blacklist.bit;
+
+    # Server Settings
+    root $root_path;
+
+    listen 80;
+    listen 443;
+    rewrite_log on;
+    default_type text/html;
+
+
+    #########################
+    # Custom Error Pages
+    #########################
+    include /usr/share/senginx/conf/conf.d/config-bits/www/custom-errors.bit;
+
+    ##################################
+    # Location Main                  #
+    ##################################
+    location / {
+        auth_basic           off;
+        auth_basic_user_file htpasswd;
+
+        include /usr/share/senginx/conf/conf.d/config-bits/www/zf-include.bit;
+    }
+
+    #################################
+    # Block .htaccess               #
+    #################################
+    location ~ \.htaccess {
+        deny all;
+    }
+
+    ##############################
+    # Fast CGI settings          #
+    ##############################
+    include /usr/share/senginx/conf/conf.d/config-bits/php-fpm.bit;
