@@ -65,6 +65,8 @@ VOLUME ["/mnt/", "/app/src", "/app/relelease", "/var/log"]
 ADD scripts/setup.term.sh /tmp/scripts/noizu.elixir/setup.term.sh
 RUN /tmp/scripts/noizu.elixir/setup.term.sh
 
+ADD scripts/daemon /tmp/scripts/noizu.elixir/daemon
+
 #====================================#
 # PORTS - Used for Dev Instance      #
 #====================================#
