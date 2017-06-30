@@ -38,18 +38,19 @@ RUN /tmp/scripts/noizu.elixir/setup.deps.sh
 #=================================================#
 # - elixir-1.4.2.tar.gz
 # - esl-erlang*19*.deb
-# - node-v6.2.1-linux.x64.tar.xz
+# - node-v8.1.3-linux.x64.tar.xz
 ADD ./bin/ /tmp/bin
 
 #====================================#
 # Updating executable path and env vars
 #====================================#
-ENV PATH /tmp/bin/elixir-1.4.2/bin/:/tmp/bin/node-v6.2.1-linux-x64/bin/:$PATH
+ENV PATH /tmp/bin/elixir-1.4.2/bin/:/tmp/bin/node-v8.1.3-linux-x64/bin/:$PATH
 ENV target prod
 
 #=================================================#
 # Setup Container - elixir                        #
 #=================================================#
+ADD ./bin/node-v8.1.3-linux-x64.tar.xz /tmp/bin/
 ADD scripts/setup.elixir.sh /tmp/scripts/noizu.elixir/setup.elixir.sh
 RUN /tmp/scripts/noizu.elixir/setup.elixir.sh
 

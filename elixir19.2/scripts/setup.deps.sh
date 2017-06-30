@@ -24,7 +24,9 @@ apt-get install -y wget && \
 echo " - git " && \
 apt-get install -y git && \
 echo " - gcc g++ make" && \
-apt-get install -y gcc g++ make
+apt-get install -y gcc g++ make && \
+echo " - python" && \
+apt-get install -y python && \
 early_exit $?
 
 #-------------------------------------------------------------------------------
