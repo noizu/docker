@@ -44,7 +44,7 @@ RUN /tmp/scripts/noizu.elixir/setup.erlang.sh
 #=================================================#
 # Setup Container - Elixir                        #
 #=================================================#
-ENV ELIXIR_PACKAGE elixir-1.5.0-rc.2
+ENV ELIXIR_PACKAGE elixir-1.5.0
 ENV PATH /usr/share/${ELIXIR_PACKAGE}/bin/:$PATH
 ADD ./bin/${ELIXIR_PACKAGE}.tar.xz /usr/share/
 RUN yes "" | mix local.hex && mix local.rebar --force && cp /root/.mix/rebar /usr/bin/rebar && cp /root/.mix/rebar3 /usr/bin/rebar3
